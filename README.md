@@ -1,4 +1,4 @@
-# wordCloud
+# Word Cloud
 Programiranje 2 projekt
 
 Potrebne knjižnice:
