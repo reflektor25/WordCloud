@@ -39,7 +39,7 @@ for tweet in tweepy.Cursor(api.search,q='#slovenia -filter:retweets',result_type
 
 
 stopwords = set([x[:-1] for x in list(open("stopwords.txt"))])
-wordcloud = WordCloud(width = 800, height = 800,
+wordcloud = WordCloud(width = 800, height = 800, collocations = False,
                       background_color = "white", stopwords = stopwords,
                       min_font_size = 10).generate(tekst)
 
