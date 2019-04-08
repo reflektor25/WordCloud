@@ -67,12 +67,12 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_secret)
 api = tweepy.API(auth)
 
-#tkinter začetno okno
+#tkinter zacetno okno
 okno = Tk()
 okno.title("WordCloud - PRO2")
 okno.configure(bg = "black")
 tekst = Label(okno, text="Twitter hashtag based Wordcloud", bg = "black", fg = "white", font = "Times 16")
-tekst.grid(row = 1) #stlači v navidezno tabelo
+tekst.grid(row = 1) #stlaci v navidezno tabelo
 vnosna = Entry(okno, width = 40, bg = "white")
 vnosna.grid(row = 2, column = 0)
 izbira = {"recent", "top"}
@@ -82,7 +82,7 @@ menu = OptionMenu(okno, nacin, *izbira)
 menu.grid(row = 2, column = 1)
 gumb = Button(okno, text = "Generiraj", width = 10, command = pritisk_gumb)
 gumb.grid(row = 3, column = 0)
-
-vnosna.bind('<Return>', pritisk_enter) # beležim pritisk tipke enter ko vnašam besedilo
+vnosna.bind('<Return>', pritisk_enter) # belezim pritisk tipke enter ko vnasam besedilo
+okno.mainloop()
 
 
