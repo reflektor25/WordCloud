@@ -27,10 +27,7 @@ def generiraj():
                 hashtag = '#'+vnos+' -filter:retweets'
         for tweet in tweepy.Cursor(api.search,q=hashtag,result_type=nacin,include_entities=True,tweet_mode='extended').items(100):
             besedilo=tweet.full_text
-            #Brez Retweet teksta
-            if besedilo[:2]=='RT':
-                ind=besedilo.find(':')+1
-                besedilo=besedilo[ind:]
+
             #Brez linkov
             temp=besedilo.split()
             samo_besede=[]
@@ -44,6 +41,8 @@ def generiraj():
             i+=1
 
         stopwords = set([x[:-1] for x in list(open("stopwords.txt"))])
+        stopwords.add(re.sub(r"#",'',vnos)) #Da wordcloud ne izpiše iskanega hashtaga
+
         wordcloud = WordCloud(width = 800, height = 800, collocations = False,
                               background_color = "white", stopwords = stopwords,
                               min_font_size = 15, max_font_size = 90, max_words = 1000,
